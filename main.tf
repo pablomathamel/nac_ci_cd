@@ -7,7 +7,7 @@ terraform {
 }
 
 provider "aci" {
-  username = "admin "
+  username = "admin"
   password = "C1sc0123p"
   url      = "https://apic.bcn/"
 }
