@@ -1,0 +1,19 @@
+apic:
+  auto_generate_switch_pod_profiles: true
+  
+  interface_policies:
+    nodes:
+      - id: 199
+        interfaces:
+          - port: 1
+            description: Linux Server 1
+            policy_group: linux-servers
+          - port: 2
+            description: Linux Server 2
+            policy_group: linux-servers
+          - port: 47
+            description: N7K Core
+            policy_group: n7000-a
+          - port: 48
+            description: N7K Core
+            policy_group: n7000-b
