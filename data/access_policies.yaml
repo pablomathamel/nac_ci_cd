@@ -3,17 +3,17 @@ apic:
   
   interface_policies:
     nodes:
-      - id: 199
+      - id: 1101
         interfaces:
-          - port: 1
+          - port: 11
             description: Linux Server 1
             policy_group: linux-servers
-          - port: 2
+          - port: 12
             description: Linux Server 2
             policy_group: linux-servers
-          - port: 47
+          - port: 13
             description: N7K Core
             policy_group: n7000-a
-          - port: 48
+          - port: 14
             description: N7K Core
             policy_group: n7000-b
