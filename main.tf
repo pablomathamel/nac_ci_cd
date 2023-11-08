@@ -4,13 +4,6 @@ terraform {
       source = "CiscoDevNet/aci"
     }
   }
-  cloud {
-    organization = "cn-demos"
-
-    workspaces {
-      name = "nac_ci_cd"
-    }
-  }  
 }
 
 
