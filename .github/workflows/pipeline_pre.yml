@@ -1,0 +1,45 @@
+# Networking CICD Pipeline with pre-change and post-change validation powered by Nexus Dashboard
+name: pipeline-pre
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push (and merge) events on the master branch
+  push:
+    branches: [preproduction]
+
+  # Allows you to run this workflow manually from the Actions tab
+  # workflow_dispatch:
+
+# Environment variables
+env:
+  PYTHONWARNINGS: "ignore:Unverified HTTPS request"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # Run lint on the complete directory containint YAML files
+  linting:
+    runs-on: self-hosted
+    container: pmathame/ansible:latest
+
+    steps:
+        - uses: actions/checkout@v2
+  
+        - name: Lint YAML files
+          run: yamllint ./data
+  
+  terraform_plan:
+    runs-on: self-hosted
+    container: pmathame/ansible:latest
+
+    steps:
+        - uses: actions/checkout@v2
+
+        - name: Terraform Init & Plan
+          run: |
+            terraform init
+            terraform plan -out=plan.tfplan
+            terraform show -json plan.tfplan > plan.json
+            terraform apply
+          working-directory: ./
+          
+        

@@ -4,12 +4,20 @@ terraform {
       source = "CiscoDevNet/aci"
     }
   }
+  cloud {
+    organization = "cn-demos"
+
+    workspaces {
+      name = "nac_ci_cd"
+    }
+  }  
 }
+
 
 provider "aci" {
   username = "admin"
   password = "C1sc0123p"
-  url      = "https://apic.bcn/"
+  url      = "https://192.168.254.30"
 }
 
 module "aci" {
