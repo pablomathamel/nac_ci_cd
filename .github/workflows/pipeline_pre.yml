@@ -28,6 +28,7 @@ jobs:
           run: yamllint ./data
   
   terraform_plan:
+    needs: linting
     runs-on: self-hosted
     container: pmathame/ansible:latest
 
