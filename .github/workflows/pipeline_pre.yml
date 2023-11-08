@@ -37,7 +37,7 @@ jobs:
 
         - name: Terraform Init & Plan
           run: |
-            apt-get install git
+            apt-get install -y git
             terraform init
             terraform plan -out=plan.tfplan
             terraform show -json plan.tfplan > plan.json
