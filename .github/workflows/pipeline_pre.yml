@@ -37,11 +37,13 @@ jobs:
 
         - name: Terraform Init & Plan
           run: |
-            apt-get install -y git
             terraform init
             terraform plan -out=plan.tfplan
             terraform show -json plan.tfplan > plan.json
-            terraform apply
           working-directory: ./
           
-        
+        - name: Upload artifact
+          uses: actions/upload-artifact@v2
+          with:
+            name: plan.json
+            path: ./plan.json
