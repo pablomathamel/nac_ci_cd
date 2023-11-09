@@ -40,8 +40,20 @@ jobs:
             terraform init
             terraform plan -out=plan.tfplan
             terraform show -json plan.tfplan > plan.json
+
           working-directory: ./
-          
+
+        - name: Pre-change Validation
+          run: |
+            export PCV_GROUP=default
+            export PCV_HOSTNAME_IP=192.168.254.34
+            export PCV_PASSWORD=C1sc0123p.
+            export PCV_SITE=ACI-BCN
+            export PCV_USERNAME=admin
+            nexus-pcv --name "pcv_${{ github.sha }}" -t plan.jso
+            
+          working-directory: ./
+
         - name: Upload artifact
           uses: actions/upload-artifact@v2
           with:
