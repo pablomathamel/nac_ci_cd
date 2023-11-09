@@ -50,7 +50,7 @@ jobs:
             export PCV_PASSWORD=C1sc0123p.
             export PCV_SITE=ACI-BCN
             export PCV_USERNAME=admin
-            nexus-pcv --name "pcv_${{ github.sha }}" -t plan.jso
+            nexus-pcv --name "pcv_${{ github.sha }}" -t plan.json
             
           working-directory: ./
 
