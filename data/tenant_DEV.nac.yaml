@@ -15,5 +15,5 @@ apic:
       application_profiles:
         - name: AP
           endpoint_groups:
-            - name: EGP-T3
+            - name: EPG-T3
               bridge_domain: BD-T3
