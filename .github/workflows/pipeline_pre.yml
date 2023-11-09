@@ -44,7 +44,7 @@ jobs:
 
           working-directory: ./
 
-        - name: Pre-change Validation setup
+        - name: Pre-change Validation
           run: |
             export PCV_GROUP=default
             export PCV_HOSTNAME_IP=192.168.254.34
@@ -52,13 +52,8 @@ jobs:
             export PCV_SITE=ACI-BCN
             export PCV_USERNAME=admin
             export no_proxy="192.168.254.34"
-         
-          working-directory: ./
-
-        - name: Pre-change Validation run
-          run: |
             nexus-pcv --name "pcv_${{ github.sha }}" -t plan.json
-          
+        
           working-directory: ./
 
         - name: Upload artifact
