@@ -10,10 +10,13 @@ apic:
         - name: BD-T3
           vrf: default
           subnets:
-            - ip: 172.16.2.1/24
+            - ip: 172.16.3.1/24
 
       application_profiles:
         - name: AP
           endpoint_groups:
-            - name: EPG-T3
+            - name: EPG-VL2003-DATABASE
               bridge_domain: BD-T3
+              contracts:
+                providers:
+                  - T2-T3
