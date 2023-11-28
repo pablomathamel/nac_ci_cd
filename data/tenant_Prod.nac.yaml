@@ -5,7 +5,7 @@ apic:
 
       vrfs:
         - name: default
-  
+
       bridge_domains:
         - name: BD-T3
           vrf: default
