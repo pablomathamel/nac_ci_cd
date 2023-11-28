@@ -5,7 +5,7 @@ apic:
 
       vrfs:
         - name: default
-
+  
       bridge_domains:
         - name: BD-T3
           vrf: default
@@ -15,5 +15,12 @@ apic:
       application_profiles:
         - name: AP
           endpoint_groups:
-            - name: EPG-T3
+
+            - name: EPG-T2
+              bridge_domain: BD-T2
+              contracts:
+                providers:
+                  - ALLOW_ALL
+
+            - name: EPG_VL350-T3
               bridge_domain: BD-T3
