@@ -23,11 +23,24 @@ jobs:
 
     steps:
         - uses: actions/checkout@v2
-  
+
         - name: Lint YAML files
           run: yamllint ./data
+
+        - name: Send Webex Notification
+          uses: adealdag/action-webex-notification@python-v1
+          if: always()
+          with:
+            webexToken: ${{ secrets.WEBEX_TOKEN }}
+            roomID: ${{ secrets.ROOM_ID }}
+            markdownMsg: |
+              ### [${{ github.job }}] ${{ github.repository }} - ${{ github.event.head_commit.message }}
+              * Trigger: ${{ github.event_name }}
+              * Git SHA: ${{ github.sha }}
+              * Status: ${{ job.status }}
+              * Details URL: [Job Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
   
-  terraform_plan:
+  Pre-change_Validation:
     needs: linting
     runs-on: self-hosted
     container: pmathame/ansible:latest
@@ -61,3 +74,16 @@ jobs:
           with:
             name: plan.json
             path: ./plan.json
+
+        - name: Send Webex Notification
+          uses: adealdag/action-webex-notification@python-v1
+          if: always()
+          with:
+            webexToken: ${{ secrets.WEBEX_TOKEN }}
+            roomID: ${{ secrets.ROOM_ID }}
+            markdownMsg: |
+              ### [${{ github.job }}] ${{ github.repository }} - ${{ github.event.head_commit.message }}
+              * Trigger: ${{ github.event_name }}
+              * Git SHA: ${{ github.sha }}
+              * Status: ${{ job.status }}
+              * Details URL: [Job Results](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
