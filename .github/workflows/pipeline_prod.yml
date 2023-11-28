@@ -28,7 +28,7 @@ jobs:
            cp -r /terraform_default/.terraform ./
            terraform init
            terraform plan
-           terraform apply -auto-approve 
+           terraform apply -auto-approve
           working-directory: ./
 
         - name: Send Webex Notification
