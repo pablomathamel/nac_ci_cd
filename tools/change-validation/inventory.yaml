@@ -3,10 +3,10 @@ dcmdr:
     nd:
       hosts:
         nd.swlab.bcn:
-          ansible_host: 192.168.254.33
+          ansible_host: 10.58.29.97
           #ansible_host: swlab.bcn:8083
           ansible_user: admin
-          ansible_ssh_pass: C1sc0123p.
+          ansible_ssh_pass: C1sc0123!
       vars:
         ansible_connection: ansible.netcommon.httpapi
         ansible_network_os: cisco.nd.nd

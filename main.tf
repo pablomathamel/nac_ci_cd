@@ -9,8 +9,8 @@ terraform {
 
 provider "aci" {
   username = "admin"
-  password = "C1sc0123p"
-  url      = "https://192.168.254.30"
+  password = "nryGbAwk5E6B3oAR"
+  url      = "https://10.58.50.131"
 }
 
 module "aci" {

@@ -1,7 +1,7 @@
 ---
 apic:
   tenants:
-    - name: TN-Production
+    - name: TN-Production-demo
 
       vrfs:
         - name: default
