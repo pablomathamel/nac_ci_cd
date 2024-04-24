@@ -64,7 +64,7 @@ jobs:
             export PCV_PASSWORD=C1sc0123!
             export PCV_SITE=ACI2_Inband
             export PCV_USERNAME=admin
-            export no_proxy="192.168.254.34"
+            export no_proxy="10.58.29.97"
             nexus-pcv --name "pcv_${{ github.sha }}" -t plan.json
         
           working-directory: ./
