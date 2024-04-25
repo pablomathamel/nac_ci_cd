@@ -15,7 +15,7 @@ apic:
       application_profiles:
         - name: AP
           endpoint_groups:
-            - name: EPG-VL2003-DATABASE
+            - name: EPG-VL2003-DATABASE2
               bridge_domain: BD-T3
               contracts:
                 providers:
