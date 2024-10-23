@@ -17,4 +17,3 @@ apic:
           endpoint_groups:
             - name: epg-app2
               bridge_domain: bd-3
-
