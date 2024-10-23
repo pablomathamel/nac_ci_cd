@@ -62,7 +62,7 @@ jobs:
             export PCV_GROUP=default
             export PCV_HOSTNAME_IP=10.50.3.152
             export PCV_PASSWORD=C!sco..123!!
-            export PCV_SITE=default
+            export PCV_SITE=MDR1
             export PCV_USERNAME=admin
             export no_proxy="10.50.3.152"
             nexus-pcv --name "pcv_${{ github.sha }}" -t plan.json
