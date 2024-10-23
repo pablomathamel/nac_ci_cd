@@ -1,22 +1,20 @@
 ---
 apic:
   tenants:
-    - name: TN-Production-pmathame
+    - name: pmathame_demo
 
       vrfs:
-        - name: default
+        - name: vrf-1
 
       bridge_domains:
-        - name: BD_T3
-          vrf: default
+        - name: bd-3
+          vrf: vrf-1
           subnets:
-            - ip: 172.16.3.1/24
+            - ip: 192.168.251.1/24
 
       application_profiles:
-        - name: AP
+        - name: ap-1
           endpoint_groups:
-            - name: EPG-VL2003-DATABASE2
-              bridge_domain: BD_T3
-              contracts:
-                providers:
-                  - T2_T3
+            - name: epg-app2
+              bridge_domain: bd-3
+
