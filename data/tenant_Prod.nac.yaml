@@ -10,7 +10,7 @@ apic:
         - name: bd-3
           vrf: vrf-1
           subnets:
-            - ip: 192.168.251.1/24
+            - ip: 192.168.252.1/24
 
       application_profiles:
         - name: ap-1
