@@ -8,9 +8,9 @@ terraform {
 
 
 provider "aci" {
-  username = "apiuser"
-  password = "nryGbAwk5E6B3oAR"
-  url      = "https://10.58.50.131"
+  username = "admin"
+  password = "C1sc0123p."
+  url      = "https://10.50.17.28"
 }
 
 module "aci" {
